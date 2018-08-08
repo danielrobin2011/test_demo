@@ -26,6 +26,12 @@ public class BikeController {
 		return bike.getBikeDetails();
 	}
 	
+	@RequestMapping(value="/bikedetails/{id}", method=RequestMethod.GET)
+	public Bike getBikeId(@PathVariable int id) {
+		System.out.println("Inside: Controller");
+		return bike.getBikeId(id);
+	}
+	
 	@RequestMapping(value="/bikedetails", method=RequestMethod.POST)
 	public String getBikeAdd(@RequestBody Bike obj) {
 		System.out.println("Inside: Controller");
@@ -42,4 +48,6 @@ public class BikeController {
 		System.out.println("Inside: Controller");
 		return bike.getBikeDelete(id);
 	}
+	
+	
 }

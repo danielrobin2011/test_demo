@@ -13,6 +13,7 @@ import com.tricon.BikeDemo.model.Bike;
 
 
 
+
 @Repository
 public class BikeDao implements IBikeDao {
 
@@ -34,6 +35,21 @@ public class BikeDao implements IBikeDao {
 		});
 		
 	}
+	
+	@Override
+	public Bike getBikeId(int id) {
+		
+		return this.jdbcTemplate.queryForObject("select * from bike where id="+id, new RowMapper<Bike>() {
+			public Bike mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Bike s=new Bike();
+			s.setId(rs.getInt("id"));
+			s.setName(rs.getString("name"));
+			s.setModel(rs.getString("modal"));
+			return s;
+			}
+		});
+	}
+	
 	@Override
 	public String getBikeAdd(Bike obj) {
 		

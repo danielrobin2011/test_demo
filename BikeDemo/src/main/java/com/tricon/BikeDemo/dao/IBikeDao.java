@@ -9,6 +9,7 @@ import com.tricon.BikeDemo.model.Bike;
 public interface IBikeDao {
 
 	public List<Bike> getBikeDetails();
+	public Bike getBikeId(int id);
 	public String getBikeAdd(Bike obj);
 	public String getBikeUpdate(Bike Obj);
 	public String getBikeDelete(int id);

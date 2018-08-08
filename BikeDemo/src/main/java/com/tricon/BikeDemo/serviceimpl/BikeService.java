@@ -9,6 +9,7 @@ import com.tricon.BikeDemo.dao.IBikeDao;
 import com.tricon.BikeDemo.model.Bike;
 import com.tricon.BikeDemo.service.IBikeService;
 
+
 @Service
 public class BikeService implements IBikeService {
 
@@ -27,6 +28,12 @@ public class BikeService implements IBikeService {
 	public String getBikeAdd(Bike obj) {
 		
 		return bikeDao.getBikeAdd(obj);
+	}
+	
+	@Override
+	public Bike getBikeId(int id) {
+		
+		return bikeDao.getBikeId(id);
 	}
 	
 	@Override
